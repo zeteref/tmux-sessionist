@@ -8,7 +8,7 @@ tmux_option_goto="@sessionist-goto"
 default_key_bindings_alternate="S"
 tmux_option_alternate="@sessionist-alternate"
 
-default_key_bindings_new="C"
+default_key_bindings_new="C-n"
 tmux_option_new="@sessionist-new"
 
 default_key_bindings_promote_pane="@"
@@ -99,11 +99,11 @@ set_kill_session_binding() {
 }
 
 main() {
-	set_goto_session_bindings
-	set_alternate_session_binding
+	#set_goto_session_bindings
+	#set_alternate_session_binding
 	set_new_session_binding
 	set_promote_pane_binding
-	set_join_pane_binding
+	#set_join_pane_binding
 	set_kill_session_binding
 }
 main
