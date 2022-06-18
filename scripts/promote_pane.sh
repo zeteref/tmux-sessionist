@@ -31,12 +31,13 @@ promote_pane() {
 	tmux join-pane -s "$CURRENT_PANE_ID" -t "$new_session_pane_id"
 	tmux kill-pane -t "$new_session_pane_id"
 	switch_to_session "$SESSION_NAME"
+    display_message "Switched to new session ${SESSION_NAME}" "1000"
 }
 
 main() {
     if session_exists_exact; then
         switch_to_session "$SESSION_NAME"
-        display_message "Switched to existing session ${SESSION_NAME}" "2000"
+        display_message "Switched to existing session ${SESSION_NAME}" "1000"
     else
         if [ "$(number_of_panes)" -gt 1 ]; then
             promote_pane
